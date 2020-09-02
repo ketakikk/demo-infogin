@@ -1,0 +1,42 @@
+.kk-form-group {
+  position: relative;
+  display: block;
+}
+.kk-form-group input.kk-form-control {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 14px;
+  color: #000;
+  outline: none;
+  margin-bottom: 12px;
+}
+.kk-form-group input:focus,
+.kk-form-group input:active {
+border-color: transparent;
+border-bottom: 1px solid blue;
+}
+
+label{
+  font-size: 15px;
+  color: rgba(0,0,0,.6);
+}
+
+.submit-btn {
+  background: rgb(244, 136, 32);
+  color: #fff;
+  border: 1px solid;
+  text-transform: uppercase;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 1px rgba(100, 100, 100, 0.3);
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 17px;
+}
+.hr-top{
+  margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid #F48220;
+
+}

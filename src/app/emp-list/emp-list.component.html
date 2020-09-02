@@ -1,0 +1,76 @@
+<div class="container-fluid" style="margin-top: 10px;">
+  <div>
+    <div class="row">
+
+      <div class="col-md-6 text-left">
+        <img class="z-depth-5" style="display: inline;width:15%" src="assets/mainlogo.png">
+        <h3 style="display: inline;margin-left:2% ; color:  rgba(0,0,0,.75)">Company Details</h3>
+
+      </div>
+      <div class="col-md-6 text-right">
+        <div class="row kk-form-group">
+          <input type="text" class="kk-form-control" type="text" name="search" [(ngModel)]="searchText"
+            autocomplete="off" style="font-family:Arial, FontAwesome" placeholder="&#xF002;  Search by Name, JobTitle"
+            (keypress)="searchData($event)">
+          <button type="button" routerLink="/company" class="btn submit-btn">Back to Company Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hr-top"></div>
+
+
+  <div infiniteScroll [infiniteScrollDistance]="0.8">
+    <!-- (scrolled)="onScroll($event)" -->
+    <!-- | filter: searchText" -->
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="15px grid">
+      <div class="card-deck" *ngFor="let member of copydata | slice: 0 : datalength;let i=index;" fxFlex="calc(33%-25px)" fxFlex.sm="calc(50%-25px)">
+        <div class="card cardborder" style="height: 150px;">
+          <div class="row">
+            <div class="col-sm-3">
+              <img class="rounded-circle z-depth-2" style="width: inherit;margin:10px 5px" [src]="member.url">
+            </div>
+            <div class="col-sm-9">
+              <div class="card-body">
+                <h5 class="card-title" style="display: flex;font-size: 17px;color: gray;">{{member.name}}
+                  <i class="fa fa-plus-circle iconcenter" style=" margin-left: auto;" aria-hidden="true"></i>
+                </h5>
+                <div class="card-text">
+                  <div class="row" style="margin-left: 2px;">
+                    <i class="fa fa-briefcase iconcenter"></i>
+                    <label>{{member.jobTitle}}</label>
+                  </div>
+                  <div *ngIf=member.reveal>
+                    <div class="row" style="margin-left: 2px;">
+                      <i class="fa fa-envelope iconcenter"></i>
+                      <label>{{member.emailAddress}}</label>
+                    </div>
+                    <div class="row" style="margin-left: 2px;">
+                      <i class="fa fa-phone iconcenter"></i>
+                      <label>{{member.phoneNumber}}</label>
+                    </div>
+                  </div>
+                  <div *ngIf=!member.reveal>
+                    <div class="row" style="margin-left: 2px;" (click)="open(member)">
+                      <i class="fa fa-lock iconcenter" style="font-size: 20px; color: #66a3ff;"></i>
+                      <label style="font-size: 20px;color: #66a3ff;">Reveal</label>
+                    </div>
+                    <div class="row" style="margin-left: 2px;">
+                      <!-- <i class="fa fa-phone iconcenter"></i>
+                      <label>{{member.phoneNumber}}</label> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

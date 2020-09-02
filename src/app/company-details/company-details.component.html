@@ -1,0 +1,106 @@
+<div class="container-fluid" style="margin-top: 10px;">
+  <form name="form" [formGroup]="companyForm">
+    <div>
+      <div class="row">
+        <div class="col-md-6 text-left">
+          <img class="z-depth-5" style="display: inline;width:15%" src="assets/mainlogo.png">
+          <h3 style="display: inline;margin-left:2% ; color:  rgba(0,0,0,.75)">Company Details</h3>
+        </div>
+        <div class="col-md-6 text-right">
+          <button type="button" disabled class="btn submit-btn ">Update</button>
+          <button type="button" routerLink="/contacts" class="btn submit-btn">Contacts</button>
+        </div>
+      </div>
+    </div>
+    <div class="hr-top"></div>
+      <div class="row">
+        <div class="col-lg-4 col-sm-3 col-md-3" style="border-right:1px solid rgba(0,0,0,.1)">
+          <div class="row">
+            <div class="col-lg-4 col-sm-3 col-md-3">
+              <img class="z-depth-5" style="width:100%" src="assets/logo.jpg">
+            </div>
+            <div class="col-lg-6 col-sm-9 col-md-9">
+              <div class="row">
+              <h5 style="display: flex;font-size: 18px;margin-left: 7%;color: gray;">SMARTe Inc.</h5>
+              <img class="z-depth-5" style="width:8%" (click)="gotoLinkdin()" src="assets/download.png">
+              </div>
+               <div style="font-size: 13px;color: rgba(0,0,0,.6);">
+                1101 A, Vishwaroop IT Park, Sector 30-A, Vashi, Navi Mumbai 400703
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-3 col-md-3">
+          <div class="row">
+            <div class="col-lg-4 col-sm-3 col-md-3">
+              <h5 style="display: flex;font-size: 18px;margin:1%;color:  #66a3ff
+              ;">Social.abb</h5>
+              <div style="font-size: 13px;color: rgba(0,0,0,.6);">
+               +44 6656545654
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-sm-9 col-md-9">
+
+        </div>
+      </div>
+      <!-- <hr> -->
+      <div class="kk-form-group" style="margin-top: 10px;">
+        <div class="row">
+          <div class="col-md-6">
+            <label>Company Name</label>
+            <input type="text" class="kk-form-control" formControlName="comp_name" maxlength='10'>
+          </div>
+          <div class="col-md-6">
+            <label>Primary Indusrty</label>
+            <input type="text" class="kk-form-control" formControlName="indusrty" maxlength='10'>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Address</label>
+            <input type="text" class="kk-form-control" formControlName="address" maxlength='10'>
+          </div>
+          <div class="col-md-6">
+            <label>parent Company</label>
+            <input type="text" class="kk-form-control" formControlName="parent_copm" maxlength='10'>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Contact Number</label>
+            <input type="text" class="kk-form-control" formControlName="phone" maxlength='10'>
+          </div>
+          <div class="col-md-6">
+            <label>Employee Size</label>
+            <input type="text" class="kk-form-control" formControlName="emp_size" maxlength='10'>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Website</label>
+            <input type="url" class="kk-form-control" formControlName="website" maxlength='10'>
+          </div>
+          <div class="col-md-6">
+            <label>Revenue</label>
+            <input type="text" class="kk-form-control" formControlName="Revenue" maxlength='10'>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Linkdin URL</label>
+            <input type="text" class="kk-form-control" formControlName="linkdin_url" maxlength='10'>
+          </div>
+          <div class="col-md-6">
+            <label>All Industry</label>
+            <input type="text" class="kk-form-control" formControlName="all_industry" maxlength='10'>
+          </div>
+        </div>
+      </div>
+
+
+
+  </form>
+</div>
