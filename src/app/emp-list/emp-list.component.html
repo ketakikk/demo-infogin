@@ -11,7 +11,7 @@
         <div class="row kk-form-group">
           <input type="text" class="kk-form-control" type="text" name="search" [(ngModel)]="searchText"
             autocomplete="off" style="font-family:Arial, FontAwesome" placeholder="&#xF002;  Search by Name, JobTitle"
-            (keypress)="searchData($event)">
+            (change)="searchData($event)">
           <button type="button" routerLink="/company" class="btn submit-btn">Back to Company Details</button>
         </div>
       </div>
@@ -20,16 +20,13 @@
 
   <div class="hr-top"></div>
 
-
-  <div infiniteScroll [infiniteScrollDistance]="0.8">
-    <!-- (scrolled)="onScroll($event)" -->
-    <!-- | filter: searchText" -->
-    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="15px grid">
-      <div class="card-deck" *ngFor="let member of copydata | slice: 0 : datalength;let i=index;" fxFlex="calc(33%-25px)" fxFlex.sm="calc(50%-25px)">
-        <div class="card cardborder" style="height: 150px;">
-          <div class="row">
+  <div infiniteScroll [infiniteScrollDistance]="0.8" (scrolled)="onScroll()">
+    <div class="row">
+      <div class="col-md-4 my-1" *ngFor="let member of firstdata">
+        <div class="card cardborder" style="height: 100%;">
+          <div class="row" >
             <div class="col-sm-3">
-              <img class="rounded-circle z-depth-2" style="width: inherit;margin:10px 5px" [src]="member.url">
+              <img class="rounded-circle z-depth-2 im-sm"  [src]="member.url">
             </div>
             <div class="col-sm-9">
               <div class="card-body">
@@ -67,10 +64,18 @@
           </div>
         </div>
       </div>
-      <hr>
+  </div>
+  <div class="row pb-5">
+    <div class="col-md-12 p-5">
+      <ngx-spinner bdOpacity=0.9 bdColor="" size="default" color="#581f87" type="ball-pulse-sync"
+        [fullScreen]="false">
+      </ngx-spinner>
     </div>
   </div>
+  </div>
+
 </div>
-<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
-  <p style="font-size: 20px; color: white">Loading...</p>
-</ngx-spinner>
+
+
+
+
